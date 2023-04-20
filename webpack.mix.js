@@ -5,6 +5,7 @@ require("./nova.mix");
 mix
   .setPublicPath("dist")
   .js("resources/js/tool.js", "js")
+  .sass('resources/sass/tool.sass', 'css')
   .vue({ version: 3 })
   .nova("classic-o/nova-media-library");
 
