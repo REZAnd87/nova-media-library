@@ -2674,17 +2674,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _soerenmartius_vue3_clipboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @soerenmartius/vue3-clipboard */ "./node_modules/@soerenmartius/vue3-clipboard/dist/vue3-clipboard.esm.js");
-/* harmony import */ var toastedjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! toastedjs */ "./node_modules/toastedjs/src/index.js");
+/* harmony import */ var _sass_tool_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/tool.sass */ "./resources/sass/tool.sass");
+/* harmony import */ var _soerenmartius_vue3_clipboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @soerenmartius/vue3-clipboard */ "./node_modules/@soerenmartius/vue3-clipboard/dist/vue3-clipboard.esm.js");
+/* harmony import */ var toastedjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! toastedjs */ "./node_modules/toastedjs/src/index.js");
 
 
-var toasted = new toastedjs__WEBPACK_IMPORTED_MODULE_0__["default"]({
+
+var toasted = new toastedjs__WEBPACK_IMPORTED_MODULE_1__["default"]({
   theme: "nova",
   position: "bottom-right",
   duration: 6000
 });
 Nova.booting(function (Vue) {
-  Vue.use(_soerenmartius_vue3_clipboard__WEBPACK_IMPORTED_MODULE_1__.VueClipboard);
+  Vue.use(_soerenmartius_vue3_clipboard__WEBPACK_IMPORTED_MODULE_2__.VueClipboard);
   Vue.component("index-media-library-field", (__webpack_require__(/*! ./field/Index/ */ "./resources/js/field/Index/index.vue")["default"]));
   Vue.component("detail-media-library-field", (__webpack_require__(/*! ./field/Detail/ */ "./resources/js/field/Detail/index.vue")["default"]));
   Vue.component("form-media-library-field", (__webpack_require__(/*! ./field/Form/ */ "./resources/js/field/Form/index.vue")["default"]));

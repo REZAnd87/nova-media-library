@@ -1,3 +1,4 @@
+import '../sass/tool.sass';
 import { VueClipboard } from "@soerenmartius/vue3-clipboard";
 import Toasted from "toastedjs";
 let toasted = new Toasted({
