@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <a class="cursor-pointer dim inline-block text-primary font-bold mt-2" @click="popup = true">
+    <a class="cursor-pointer dim inline-block text-primary font-bold mt-2 font-bold text-xl" @click="popup = true">
       {{ __('Media Library') }}
     </a>
 

@@ -1,9 +1,9 @@
 <template>
   <div id="nml-tool" :class="'nml-store-'+ (`folders` === config.store ? 'folders' : 'together')">
 
-    <heading class="mb-6">{{ __('Media Library') }}</heading>
+    <heading class="mb-6 font-bold text-3xl">{{ __('Media Library') }}</heading>
 
-    <Action />
+    <Action @changebulk="changeBulk" />
 
     <Search />
 
@@ -12,7 +12,7 @@
     <Loader />
 
     <transition name="fade" mode="out-in">
-      <Popup v-if="item && 'info' === popup" />
+      <Popup v-if="this.item && 'info' === this.popup" />
     </transition>
 
     <transition name="fade" mode="out-in">
