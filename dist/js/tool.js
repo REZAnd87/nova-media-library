@@ -1629,7 +1629,7 @@ var _hoisted_1 = {
   "class": "flex flex-wrap mb-4 select-none"
 };
 var _hoisted_2 = {
-  "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded bg-90 text-center cursor-pointer shadow-md max-w-full ml-auto"
+  "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded bg-90 text-center text-xl cursor-pointer shadow-md max-w-full ml-auto"
 };
 var _hoisted_3 = ["accept"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -1646,7 +1646,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["onInput"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.$parent.bulk.enable ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
-    "class": "flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white dark:text-gray-800 inline-flex items-center font-bold px-4 h-9 text-sm flex-shrink-0",
+    "class": "mr-4 flex-shrink-0 shadow rounded focus:outline-none ring-sky-200 dark:ring-gray-600 focus:ring bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white dark:text-gray-800 inline-flex items-center font-bold px-4 h-9 text-sm flex-shrink-0",
     type: "button",
     onClick: _cache[0] || (_cache[0] = function () {
       return _ctx.bulkAll && _ctx.bulkAll.apply(_ctx, arguments);
@@ -1654,7 +1654,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('Select All')), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.$parent.bulkLen() ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 2
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "flex-shrink-0 shadow rounded focus:outline-none ring-red-200 dark:ring-gray-600 focus:ring bg-red-500 hover:bg-red-400 active:bg-red-600 text-white dark:text-gray-800 inline-flex items-center font-bold px-4 h-9 text-sm flex-shrink-0",
+    "class": "mr-4 flex-shrink-0 shadow rounded focus:outline-none ring-red-200 dark:ring-gray-600 focus:ring bg-red-500 hover:bg-red-400 active:bg-red-600 text-white dark:text-gray-800 inline-flex items-center font-bold px-4 h-9 text-sm flex-shrink-0",
     type: "button",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return _ctx.$parent.deleteFiles(Object.keys(_ctx.$parent.bulk.ids));
@@ -1747,25 +1747,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    "class": "btn-default btn-primary cursor-pointer mr-4 shadow-md",
+    "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded bg-90 text-center text-xl cursor-pointer shadow-md max-w-full ml-auto mr-4",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return _ctx.save(0);
     })
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('Save as new')), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    "class": "btn-default btn-primary cursor-pointer mr-4 shadow-md",
+    "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded bg-90 text-center text-xl cursor-pointer shadow-md max-w-full ml-auto mr-4",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return _ctx.save(1);
     })
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('Overwrite existing')), 1 /* TEXT */)], 64 /* STABLE_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    "class": "btn-default cursor-pointer bg-success text-black ml-auto px-3 shadow-md",
+    "class": "bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded bg-90 text-center text-xl cursor-pointer shadow-md max-w-full ml-auto mr-4",
     onClick: _cache[5] || (_cache[5] = function ($event) {
       return _ctx.crop.clear().reset();
     })
   }, "x1"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    "class": "btn-default btn-danger cursor-pointer ml-4 shadow-md",
+    "class": "bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded bg-90 text-center text-xl cursor-pointer shadow-md max-w-full ml-auto mr-4",
     onClick: _cache[6] || (_cache[6] = function ($event) {
       return _ctx.$parent.$parent.popup = 'info';
     })

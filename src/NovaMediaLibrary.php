@@ -27,7 +27,7 @@ class NovaMediaLibrary extends Tool
     {
         return MenuSection::make('Media')
             ->path('/nova-media-library')
-            ->icon('camera');
+            ->icon('paper-clip');
     }
 
     private function config()
