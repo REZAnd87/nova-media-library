@@ -173,20 +173,16 @@ class Upload
         }
 
         try {
-            $manager = new \Intervention\Image\ImageManager([ 'driver' => data_get($this->config, 'resize.driver') ]);
-            $image = $manager->make($this->file);
+            $driver = match($config['driver']) {
+                'imagick' => \Intervention\Image\Drivers\Imagick\Driver::class,
+                default => \Intervention\Image\Drivers\Gd\Driver::class,
+            };
+            $manager = \Intervention\Image\ImageManager::withDriver($driver);
+            $image = $manager->read($this->file);
 
-            $data = $image->resize($this->resize['width'], $this->resize['height'], function ($constraint) {
-                if (! $this->resize['width'] or ! $this->resize['height']) {
-                    $constraint->aspectRatio();
-                }
+            $data = $image->resize($this->resize['width'], $this->resize['height']);
 
-                if (true !== $this->resize['upSize']) {
-                    $constraint->upsize();
-                }
-            });
-
-            $stream = $data->stream(null, data_get($this->config, 'resize.quality'));
+            $stream = $data->toJpg(data_get($this->config, 'resize.quality'));
 
             $this->bytes = $data->filesize();
             $this->stream = $stream;
