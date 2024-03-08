@@ -29,7 +29,11 @@ class Crop
 
     public function make()
     {
-        $manager = new ImageManager([ 'driver' => $this->config['driver'] ]);
+        $driver = match($config['driver']) {
+            'imagick' => \Intervention\Image\Drivers\Imagick\Driver::class,
+            default => \Intervention\Image\Drivers\Gd\Driver::class,
+        };
+        $manager = \Intervention\Image\ImageManager::withDriver($driver);
         $image = $manager->make(
             Helper::storage()->readStream(
                 Helper::folder($this->image['folder']) . $this->image['name']
@@ -118,7 +122,11 @@ class Crop
             }
         }
 
-        $manager = new \Intervention\Image\ImageManager([ 'driver' => $config['driver'] ]);
+        $driver = match($config['driver']) {
+            'imagick' => \Intervention\Image\Drivers\Imagick\Driver::class,
+            default => \Intervention\Image\Drivers\Gd\Driver::class,
+        };
+        $manager = \Intervention\Image\ImageManager::withDriver($driver);
 
         foreach ($config['sizes'] as $size => $data) {
             if (! is_int($data[0]) and ! is_int($data[1]) or self::cantResize($item, $data)) {
@@ -126,16 +134,17 @@ class Crop
             }
 
             try {
-                $fn = ($data[0] and $data[1]) ? 'fit' : 'resize';
-                $img = $manager->make($file)->$fn($data[0], $data[1], function ($constraint) use ($data) {
-                    if (! $data[0] or ! $data[1]) {
-                        $constraint->aspectRatio();
-                    }
-
-                    if ($data[2] !== true) {
-                        $constraint->upsize();
-                    }
-                })->stream(null, $config['quality'])->__toString();
+                $fn = ($data[0] and $data[1]) ? 'contain' : 'resize';
+                $img = $manager->read($file);
+                switch ($fn) {
+                    case 'contain':
+                        $img = $img->resize($data[0], $data[1]);
+                        break;
+                    case 'resize':
+                        $img = $img->resize($data[0], $data[1]);
+                        break;
+                }
+                $img = $img->toJpeg($config['quality'])->__toString();
 
                 if (
                     Helper::storage()->put(
